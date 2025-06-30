@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import Claims from "./components/claims/Claims";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route element={<App />} path="/" />
-        <Route element={<App />} path="/claims" />
+        <Route element={<Claims />} path="/claims" />
       </Routes>
     </>
   );
