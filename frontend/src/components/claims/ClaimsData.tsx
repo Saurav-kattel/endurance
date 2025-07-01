@@ -58,7 +58,7 @@ export default function ClaimsData({
             <TableTh>Amount</TableTh>
           </TableTr>
         </TableThead>
-        <TableTbody>
+        <TableTbody className="[&>tr>td]:p-2">
           {data &&
             data.map((claim) => {
               return (
@@ -67,7 +67,7 @@ export default function ClaimsData({
                     navigate(`/claims/${claim.claim_number}`);
                   }}
                   key={claim.ro_number}
-                  className="m-2 p-2 cursor-pointer hover:bg-gray-100 hover:opacity-60"
+                  className="m-2 py-4 border-b-[1px] border-b-gray-100 cursor-pointer hover:bg-gray-100 hover:opacity-60"
                 >
                   <TableTd>
                     <div className="text-center capitalize font-semibold flex justify-start items-center gap-2 px-3">

@@ -18,7 +18,7 @@ export default function ClaimStatus({
 }) {
   return (
     <Box className="w-[90%] p-4 rounded-xl border border-gray-300">
-      <Table className="w-[90%] border-collapse py-2 border-separate border-spacing-4">
+      <Table className="w-[90%] border-collapse py-2  border-spacing-4">
         <TableThead>
           <TableTr>
             <TableTh className="uppercase text-[0.8rem] text-gray-500 text-left">
@@ -33,8 +33,8 @@ export default function ClaimStatus({
           </TableTr>
         </TableThead>
 
-        <TableTbody className="border  border-gray-500">
-          <TableTr>
+        <TableTbody className="[&>tr>td]:p-2">
+          <TableTr className="border-b-[1px] border-b-gray-100 ">
             <TableTd>
               <div className="text-center capitalize font-semibold flex justify-start items-center gap-2">
                 <div

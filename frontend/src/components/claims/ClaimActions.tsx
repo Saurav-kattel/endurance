@@ -1,5 +1,5 @@
 import { Box, FileInput, Image, Input, Text, Textarea } from "@mantine/core";
-import { forwardRef, useRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import type { PropType } from "./Claim";
 import { GrUploadOption } from "react-icons/gr";
 import { FaNoteSticky } from "react-icons/fa6";
@@ -8,6 +8,9 @@ import { FaFileUpload } from "react-icons/fa";
 const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
   const [message, setMessage] = useState("");
   const [note, setNote] = useState("");
+  useEffect(() => {
+    props.setActiveSection("action");
+  }, []);
   const fileRef = useRef<HTMLButtonElement>(null);
   return (
     <Box
