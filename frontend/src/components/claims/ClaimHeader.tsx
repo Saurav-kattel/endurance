@@ -17,8 +17,8 @@ export default function ClaimHeader({
   claimData: ApiData | undefined;
 }) {
   return (
-    <Container className="w-full flex justify-center items-center flex-col">
-      <Box className="w-[90%] p-4">
+    <Container className="w-[80%] p-4 flex justify-center items-center flex-col">
+      <Box>
         <Text className="text-2xl font-bold p-4">
           {claimData?.claim_number}
         </Text>

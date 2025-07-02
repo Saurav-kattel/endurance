@@ -1,0 +1,11 @@
+{
+  "name": "Devon Lane",
+  "status": "Active",
+  "contract": "EADV25020916",
+  "deductable": 100,
+  "vehicle": "2022 DODGE Ram Pickup",
+  "total_claims": 1,
+  "term": "60 mo/100.00mi",
+  "image_url": "https://randomuser.me/api/portraits/men/83.jpg",
+  "vin": "3D7LT51414119811"
+}

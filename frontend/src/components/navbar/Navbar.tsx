@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <Container className="flex  text-[1rem] items-center justify-between w-[l00vw] overflow-x-hidden mt-5 px-2 box-border">
-      <Box className="text-xs w-[18%]">
+      <Box className="text-xs w-[12%]">
         <Text>Logo</Text>
       </Box>
 

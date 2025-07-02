@@ -10,7 +10,7 @@ export default function ClaimNav({ activeSection }: { activeSection: string }) {
     { name: "Other", id: "#other" },
   ]);
   return (
-    <Box className="w-[90%] sticky top-0 left-0 bg-white">
+    <Box className="w-[80%] p-4 sticky top-0 left-0 bg-white">
       <nav className="flex w-full lg:w-[40%] items-center text-[0.8rem] my-3 justify-between capitalize text-gray-500">
         {navitems.map((item) => {
           return (

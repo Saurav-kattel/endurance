@@ -9,12 +9,7 @@ import {
   Text,
 } from "@mantine/core";
 import { forwardRef, useEffect, useState } from "react";
-import type { PropType } from "./Claim";
-type SubletData = {
-  name: string;
-  cost_per: number;
-  quantity: number;
-};
+import type { SubletData } from "./Claim";
 
 const SubletHeader = ({ subletData }: { subletData: SubletData[] }) => {
   const [totalAmount] = useState(
@@ -75,25 +70,20 @@ const SubletData = ({ data }: { data: SubletData[] }) => {
   );
 };
 
-const ClaimSublets = forwardRef<HTMLDivElement, PropType>((props, ref) => {
-  const [subletData, setSubletData] = useState<SubletData[]>([]);
+const ClaimSublets = forwardRef<
+  HTMLDivElement,
+  {
+    subletData: SubletData[];
+    setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  }
+>((props, ref) => {
   useEffect(() => {
     props.setActiveSection("sublet");
-    async function getSubletData() {
-      try {
-        const response = await fetch("../../../examplesubletdata.json");
-        const data = await response.json();
-        setSubletData(data);
-      } catch (err: any) {
-        console.log(err);
-      }
-    }
-    getSubletData();
   }, []);
   return (
-    <Box ref={ref} id="sublet" className="h-auto lg:h-[50dvh]  w-[90%] p-4">
-      {subletData && <SubletHeader subletData={subletData} />}
-      {subletData && <SubletData data={subletData} />}
+    <Box ref={ref} id="sublet" className="h-auto lg:h-[50dvh]  w-[80%] p-4">
+      {props.subletData && <SubletHeader subletData={props.subletData} />}
+      {props.subletData && <SubletData data={props.subletData} />}
     </Box>
   );
 });

@@ -1,9 +1,18 @@
 import { Box, FileInput, Image, Input, Text, Textarea } from "@mantine/core";
-import { forwardRef, useEffect, useRef, useState } from "react";
-import type { PropType } from "./Claim";
+import {
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+  type SetStateAction,
+} from "react";
 import { GrUploadOption } from "react-icons/gr";
 import { FaNoteSticky } from "react-icons/fa6";
 import { FaFileUpload } from "react-icons/fa";
+
+type PropType = {
+  setActiveSection: React.Dispatch<SetStateAction<string>>;
+};
 
 const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
   const [message, setMessage] = useState("");
@@ -16,7 +25,7 @@ const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     <Box
       ref={ref}
       id="action"
-      className="flex flex-col gap-2 lg:gap-0  lg:flex-row justify-between lg:h-[50vh] items-center w-[90%] p-4"
+      className="flex flex-col gap-2 lg:gap-0  lg:flex-row justify-between lg:h-[50vh] items-center w-[80%] p-4"
     >
       <Box className="border border-gray-300 h-full w-[90%] lg:w-[30%] rounded-xl">
         <Box className="h-[80%]">

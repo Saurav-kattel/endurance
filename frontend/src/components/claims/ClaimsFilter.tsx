@@ -59,13 +59,13 @@ export default function ClaimsFilter({
 
       <Box
         ref={ref}
-        className="w-[50%]  translate-x-100 fixed right-0 mt-[14rem] box-border bg-white p-4 gap-2 z-10 opacity-0 transition-all justify-between items-center mb-2  lg:flex lg:mt-auto lg:z-auto lg:translate-x-0"
+        className="w-[50%]  translate-x-100 fixed right-0 mt-[14rem] box-border bg-white p-4 gap-2 z-10 opacity-0 transition-all justify-between items-center mb-2  lg:flex lg:relative lg:right-auto lg:m-0 lg:mb-4  lg:opacity-100 lg:z-auto lg:translate-x-0 lg:w-[70%]"
       >
         <Box className=" min-h-[0.8rem] px-2 py-1 rounded-md flex justify-start bg-gray-300 items-center gap-2">
           <CiSearch />
           <input
             placeholder="search"
-            className="bg-transparent outline-none text-[0.8rem] placeholder:text-[0.8rem] w-full"
+            className="bg-transparent outline-none text-[0.8rem] placeholder:text-[0.8rem] w-full lg:w-[20%]"
           />
         </Box>
         <Box className="text-[0.8rem] border-[1px] border-gray-200 rounded-sm p-1 cursor-pointer flex items-center font-semibold justify-start gap-1">

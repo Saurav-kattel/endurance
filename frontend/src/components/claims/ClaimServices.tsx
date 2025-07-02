@@ -13,35 +13,11 @@ import {
 import { forwardRef, useEffect, useState } from "react";
 import { FiMinus } from "react-icons/fi";
 import { GoPlus } from "react-icons/go";
+import type { Issue, JobData, Labour, Part } from "./Claim";
 
-export type JobData = {
-  name: string;
-  issue: Issue[];
-};
-
-type Issue = {
-  name: string;
-  parts: Part[];
-  labour: Labour[];
-};
-
-type Part = {
-  name: string;
-  part_number: string;
-  qty: number;
-  wty_mo: number;
-  wty_miles: number;
-  cost_per: number;
-  tax_per: number;
-};
-
-type Labour = {
-  description: string;
-  menu: boolean;
-  hours: number;
-  rate: number;
-  tax: number;
-  tax_per: number;
+type PropType = {
+  setActiveSection: React.Dispatch<React.SetStateAction<string>>;
+  serviceData: JobData[];
 };
 
 const PartContainer = ({ data }: { data: Part[] }) => {
@@ -222,34 +198,27 @@ const JobContainer = ({ data }: { data: JobData }) => {
   );
 };
 
-const ClaimServices = forwardRef<HTMLDivElement, {}>((props, ref) => {
-  const [serviceData, setServiceData] = useState<JobData[]>();
+const ClaimServices = forwardRef<HTMLDivElement, PropType>((props, ref) => {
+  const [total, setTotal] = useState(0);
+  const serviceData = props.serviceData;
   useEffect(() => {
-    async function getData() {
-      try {
-        const response = await fetch("../../../exampleserivedata.json");
-        const data = await response.json();
-        setServiceData(data);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    getData();
-  }, []);
-  const totalPrice = serviceData?.reduce((acc, job) => {
-    const jobTotal = job.issue.reduce((issueAcc, issue) => {
-      const issueTotal = issue.parts.reduce((partAcc, part) => {
-        return partAcc + part.cost_per + part.tax_per;
+    props.setActiveSection("service");
+    const totalPrice = serviceData?.reduce((acc, job) => {
+      const jobTotal = job.issue.reduce((issueAcc, issue) => {
+        const issueTotal = issue.parts.reduce((partAcc, part) => {
+          return partAcc + part.cost_per + part.tax_per;
+        }, 0);
+        return issueAcc + issueTotal;
       }, 0);
-      return issueAcc + issueTotal;
+      return acc + jobTotal;
     }, 0);
-    return acc + jobTotal;
-  }, 0);
+    setTotal(totalPrice);
+  }, []);
   return (
-    <Container ref={ref} className="w-[90%] p-4">
+    <Container ref={ref} className="w-[80%] p-4">
       <Text className="text-[1rem] flex gap-2 items-center font-semibold">
         Services
-        <Text className="text-[0.8rem] text-gray-500">${totalPrice}</Text>
+        <Text className="text-[0.8rem] text-gray-500">${total}</Text>
       </Text>
       <Box className="flex justify-center items-start w-full flex-col gap-4  mt-4">
         {serviceData?.map((data) => (
