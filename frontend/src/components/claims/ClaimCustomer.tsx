@@ -27,11 +27,11 @@ export default function ClaimCustomer() {
     }
   }, []);
   return (
-    <Container className="w-[80%] my-3">
+    <Container className="w-[80%] p-4 my-5">
       <Text className="text-[1rem] font-semibold p-2">Customer</Text>
       {customerData && (
-        <Box className="p-4 border border-gray-300 rounded-lg grid grid-cols-4 gap-4 items-center">
-          <Box className="flex flex-col items-start justify-center text-center gap-2">
+        <Box className="p-4 border border-gray-300 rounded-lg grid grid-rows-4  lg:grid-rows-1  lg:grid-cols-4 gap-4 items-center">
+          <Box className="flex flex-wrap flex-col items-start justify-center text-center gap-2">
             <Image
               src={customerData.image_url}
               alt="user profile image"
