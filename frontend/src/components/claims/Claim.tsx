@@ -7,6 +7,7 @@ import ClaimStatus from "./ClaimStatus";
 import ClaimNav from "./ClaimNav";
 import ClaimActions from "./ClaimActions";
 import ClaimSublets from "./ClaimSublets";
+import ClaimServices from "./ClaimServices";
 
 export type PropType = {
   activeSection: string;
@@ -80,6 +81,7 @@ export default function Claim() {
         setActiveSection={setActiveSection}
         activeSection={activeSection}
       />
+      <ClaimServices ref={refs.sublet} />
     </Container>
   );
 }

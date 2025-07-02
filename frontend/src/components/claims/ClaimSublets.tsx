@@ -91,7 +91,7 @@ const ClaimSublets = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     getSubletData();
   }, []);
   return (
-    <Box ref={ref} id="sublet" className="h-[50dvh] w-[90%] p-4">
+    <Box ref={ref} id="sublet" className="h-auto lg:h-[50dvh]  w-[90%] p-4">
       {subletData && <SubletHeader subletData={subletData} />}
       {subletData && <SubletData data={subletData} />}
     </Box>

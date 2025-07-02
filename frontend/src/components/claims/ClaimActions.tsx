@@ -16,9 +16,9 @@ const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     <Box
       ref={ref}
       id="action"
-      className="flex justify-between h-[50vh] items-center w-[90%] p-4"
+      className="flex flex-col gap-2 lg:gap-0  lg:flex-row justify-between lg:h-[50vh] items-center w-[90%] p-4"
     >
-      <Box className="border border-gray-300 h-full w-[30%] rounded-xl">
+      <Box className="border border-gray-300 h-full w-[90%] lg:w-[30%] rounded-xl">
         <Box className="h-[80%]">
           <Box className="flex justify-start items-center gap-2">
             <Image
@@ -53,7 +53,7 @@ const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
         </Box>
       </Box>
 
-      <Box className="border flex flex-col justify-center  h-full items-center border-gray-300 w-[30%] rounded-xl">
+      <Box className="border flex flex-col justify-center  h-full items-center border-gray-300 w-[90%] lg:w-[30%] rounded-xl">
         <Box className="flex justify-start items-start w-full gap-2 p-2">
           <FaNoteSticky className="h-[1rem]" />
           <Text className="text-[1rem] uppercase">Notes</Text>
@@ -75,7 +75,7 @@ const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
         </Box>
       </Box>
 
-      <Box className="border-[1px] border-dashed border-gray-300 h-full flex flex-col items-center rounded-xl p-2">
+      <Box className="border-[1px] border-dashed border-gray-300 w-[90%]  h-full lg:w-[30%] flex flex-col items-center rounded-xl p-2">
         <Box className="flex items-center w-full justify-start h-[20%] gap-2">
           <FaFileUpload />
           <Text className="uppercase text-[1rem]">File</Text>

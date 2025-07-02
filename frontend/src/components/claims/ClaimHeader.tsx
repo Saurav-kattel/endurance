@@ -23,37 +23,49 @@ export default function ClaimHeader({
           {claimData?.claim_number}
         </Text>
       </Box>
-      <Box className="w-[90%] p-5">
-        <Table className="w-[90%]">
+
+      <Box className="w-full overflow-x-auto p-4">
+        <Table className="min-w-[600px] w-full">
           <TableThead>
             <TableTr>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Type
               </TableTh>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Ro Number
               </TableTh>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Date
               </TableTh>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Client
               </TableTh>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Assigned To
               </TableTh>
-              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-1">
+              <TableTh className="text-left text-[0.8rem] text-gray-400 uppercase p-2 whitespace-nowrap">
                 Current ODO
               </TableTh>
             </TableTr>
           </TableThead>
           <TableTbody>
             <TableTr>
-              <TableTd>{claimData?.type}</TableTd>
-              <TableTd>{claimData?.ro_number}</TableTd>
-              <TableTd>{claimData?.date}</TableTd>
-              <TableTd>{claimData?.client}</TableTd>
-              <TableTd>{claimData?.assigned_to}</TableTd>
+              <TableTd className="p-2 whitespace-nowrap">
+                {claimData?.type}
+              </TableTd>
+              <TableTd className="p-2 whitespace-nowrap">
+                {claimData?.ro_number}
+              </TableTd>
+              <TableTd className="p-2 whitespace-nowrap">
+                {claimData?.date}
+              </TableTd>
+              <TableTd className="p-2 whitespace-nowrap">
+                {claimData?.client}
+              </TableTd>
+              <TableTd className="p-2 whitespace-nowrap">
+                {claimData?.assigned_to}
+              </TableTd>
+              <TableTd className="p-2 whitespace-nowrap"></TableTd>
             </TableTr>
           </TableTbody>
         </Table>
