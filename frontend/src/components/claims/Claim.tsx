@@ -76,14 +76,22 @@ export default function Claim() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
+        let maxRatio = 0;
+        let visibleSectionId = null;
+
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            visibleSectionId = entry.target.id;
           }
         });
+
+        if (visibleSectionId) {
+          setActiveSection(visibleSectionId);
+        }
       },
       {
-        threshold: 0.5,
+        threshold: 0.6,
       },
     );
 

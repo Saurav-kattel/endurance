@@ -85,5 +85,179 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Engine Over Heating",
+    "issue": [
+      {
+        "name": "cooling system repair",
+        "parts": [
+          {
+            "name": "Radiaotr",
+            "part_number": "12345678AA",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 500,
+            "tax_per": 75
+          },
+          {
+            "name": "Coolent",
+            "part_number": "87654321BB",
+            "qty": 3,
+            "wty_mo": 12,
+            "wty_miles": 30000,
+            "cost_per": 30,
+            "tax_per": 4.50
+          }
+        ],
+        "labour": [
+          {
+            "description": "senior engineer",
+            "menu": true,
+            "rate": 60,
+            "hours": 2,
+            "tax": 15,
+            "tax_per": 45
+          },
+          {
+            "description": "engineer's labour",
+            "menu": true,
+            "rate": 50,
+            "hours": 1,
+            "tax": 15,
+            "tax_per": 30
+          }
+        ]
+      },
+      {
+        "name": "Thermost Replacement",
+        "parts": [
+          {
+            "name": "Thormostat",
+            "part_number": "11223344CC",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 45,
+            "tax_per": 6.75
+          },
+          {
+            "name": "Gasket",
+            "part_number": "44332211DD",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 15,
+            "tax_per": 2.25
+          }
+        ],
+        "labour": [
+          {
+            "description": "Technician  Labour",
+            "menu": true,
+            "rate": 40,
+            "hours": 2,
+            "tax": 15,
+            "tax_per": 12
+          },
+          {
+            "description": "junior Technician Labour",
+            "menu": true,
+            "rate": 35,
+            "hours": 1,
+            "tax": 15,
+            "tax_per": 5.25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Engine Over Heating",
+    "issue": [
+      {
+        "name": "cooling system repair",
+        "parts": [
+          {
+            "name": "Radiaotr",
+            "part_number": "12345678AA",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 500,
+            "tax_per": 75
+          },
+          {
+            "name": "Coolent",
+            "part_number": "87654321BB",
+            "qty": 3,
+            "wty_mo": 12,
+            "wty_miles": 30000,
+            "cost_per": 30,
+            "tax_per": 4.50
+          }
+        ],
+        "labour": [
+          {
+            "description": "senior engineer",
+            "menu": true,
+            "rate": 60,
+            "hours": 2,
+            "tax": 15,
+            "tax_per": 45
+          },
+          {
+            "description": "engineer's labour",
+            "menu": true,
+            "rate": 50,
+            "hours": 1,
+            "tax": 15,
+            "tax_per": 30
+          }
+        ]
+      },
+      {
+        "name": "Thermost Replacement",
+        "parts": [
+          {
+            "name": "Thormostat",
+            "part_number": "11223344CC",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 45,
+            "tax_per": 6.75
+          },
+          {
+            "name": "Gasket",
+            "part_number": "44332211DD",
+            "qty": 1,
+            "wty_mo": 24,
+            "wty_miles": 50000,
+            "cost_per": 15,
+            "tax_per": 2.25
+          }
+        ],
+        "labour": [
+          {
+            "description": "Technician  Labour",
+            "menu": true,
+            "rate": 40,
+            "hours": 2,
+            "tax": 15,
+            "tax_per": 12
+          },
+          {
+            "description": "junior Technician Labour",
+            "menu": true,
+            "rate": 35,
+            "hours": 1,
+            "tax": 15,
+            "tax_per": 5.25
+          }
+        ]
+      }
+    ]
   }
 ]

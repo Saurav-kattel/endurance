@@ -10,7 +10,7 @@ const ClaimOther = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     props.setActiveSection("other");
   }, []);
   return (
-    <Container ref={ref} className="w-[80%] p-4 my-4">
+    <Container id="other" ref={ref} className="w-[80%] p-4 my-4">
       <Text className="font-semibold text-[1rem] p-2"> Other Details </Text>
 
       <Box className="w-full flex flex-wrap gap-2  justify-between p-1 items-center h-20">

@@ -215,7 +215,7 @@ const ClaimServices = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     setTotal(totalPrice);
   }, []);
   return (
-    <Container ref={ref} className="w-[80%] p-4">
+    <Container ref={ref} id="service" className="w-[80%] p-4">
       <Text className="text-[1rem] flex gap-2 items-center font-semibold">
         Services
         <Text className="text-[0.8rem] text-gray-500">${total}</Text>

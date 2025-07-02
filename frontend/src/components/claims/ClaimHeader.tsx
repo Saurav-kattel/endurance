@@ -10,6 +10,8 @@ import {
   Text,
 } from "@mantine/core";
 import type { ApiData } from "./ClaimsData";
+import { MdOutlineChevronRight } from "react-icons/md";
+import { PiLayoutThin } from "react-icons/pi";
 
 export default function ClaimHeader({
   claimData,
@@ -17,7 +19,14 @@ export default function ClaimHeader({
   claimData: ApiData | undefined;
 }) {
   return (
-    <Container className="w-[80%] p-4 flex justify-center items-center flex-col">
+    <Container className="w-[80%] px-1 py-4 flex justify-center items-start flex-col">
+      <Box className="flex justify-center items-center p-4  gap-1 text-[0.8rem] text-gray-400">
+        <PiLayoutThin size={20} />
+        <Text>Claims</Text>
+        <MdOutlineChevronRight size={20} />
+        <Text>Action Needed</Text>
+      </Box>
+
       <Box>
         <Text className="text-2xl font-bold p-4">
           {claimData?.claim_number}

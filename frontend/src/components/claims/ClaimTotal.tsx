@@ -65,8 +65,8 @@ const ClaimTotal = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     setTotals({ ...computed, subletTotal: subletTotal });
   }, [props.subletData, props.serviceData]);
   return (
-    <Container ref={ref} className="w-[80%] p-4">
-      <Text className="text-[1rem] font-semibold">Totals</Text>
+    <Container id="total" ref={ref} className="w-[80%] p-4 mt-5">
+      <Text className="text-[1rem] font-semibold my-3">Totals</Text>
       <Box className="w-full border-[1px]  border-gray-200 rounded-md">
         <Table className="w-full">
           <TableThead>
