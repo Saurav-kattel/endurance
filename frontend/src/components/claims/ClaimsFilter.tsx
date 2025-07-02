@@ -1,8 +1,8 @@
 import { Box, Container, Text } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FilterItem from "./FilterItem";
-import { FaCalendar, FaFileExport, FaSearchengin } from "react-icons/fa";
-import { FaArrowDownWideShort, FaUser } from "react-icons/fa6";
+import { FaCalendar, FaFileExport } from "react-icons/fa";
+import { FaArrowDownWideShort, FaGear, FaUser } from "react-icons/fa6";
 import { CiSearch } from "react-icons/ci";
 export default function ClaimsFilter({
   selectedFilter,
@@ -17,10 +17,28 @@ export default function ClaimsFilter({
     "Pending",
     "Declined",
   ]);
+  const [showGroup, setShowGroup] = useState(false);
 
+  useEffect(() => {
+    if (ref.current) {
+      if (ref.current.classList.contains("translate-x-0")) {
+        ref.current.classList.remove("translate-x-0");
+        ref.current.classList.remove("opacity-100");
+        ref.current.classList.add("opacity-0");
+        ref.current.classList.add("translate-x-100");
+      } else if (ref.current.classList.contains("translate-x-100")) {
+        ref.current.classList.remove("translate-x-100");
+        ref.current.classList.remove("opacity-0");
+        ref.current.classList.add("opacity-100");
+        ref.current.classList.add("translate-x-0");
+      }
+    }
+  }, [showGroup]);
+
+  const ref = useRef<HTMLDivElement>(null);
   return (
     <Container className="flex h-8 m-0 p-0 border-b-[1px] border-b-gray-200  px-2 justify-between items-center">
-      <Box>
+      <Box className="flex items-center justify-between w-full gap-2">
         {filters.map((filter) => (
           <FilterItem
             key={filter}
@@ -29,10 +47,21 @@ export default function ClaimsFilter({
             setSelectedFilter={setSelectedFilter}
           />
         ))}
+        <Box
+          onClick={() => {
+            setShowGroup(!showGroup);
+          }}
+        >
+          <FaGear className="text-xl lg:hidden" />
+          <div className="bg-transparent h-[0.4rem]"></div>
+        </Box>
       </Box>
 
-      <Box className="w-[50%] flex justify-between items-center mb-2">
-        <Box className="w-[30%] min-h-[0.8rem] px-2 py-1 rounded-md flex justify-start bg-gray-300 items-center gap-2">
+      <Box
+        ref={ref}
+        className="w-[50%]  translate-x-100 fixed right-0 mt-[14rem] box-border bg-white p-4 gap-2 z-10 opacity-0 transition-all justify-between items-center mb-2  lg:flex lg:mt-auto lg:z-auto lg:translate-x-0"
+      >
+        <Box className=" min-h-[0.8rem] px-2 py-1 rounded-md flex justify-start bg-gray-300 items-center gap-2">
           <CiSearch />
           <input
             placeholder="search"

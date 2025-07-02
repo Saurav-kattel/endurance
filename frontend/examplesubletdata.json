@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Rental Car Service",
+    "quantity": 2,
+    "cost_per": 30
+  },
+  {
+    "name": "Tow service towing upto 50 miles",
+    "quantity": 1,
+    "cost_per": 150
+  }
+]

@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { Box } from "@mantine/core";
 
 export default function FilterItem({
   selectedFilter,
@@ -11,15 +11,16 @@ export default function FilterItem({
 }) {
   const isActive = selectedFilter === filter;
   return (
-    <Button
-      className={` text-[1rem] px-2 py-3 cursor-pointer
+    <Box
+      className={` text-[0.8rem] px-2 py-3 cursor-pointer
         ${isActive ? "text-slate-900" : "text-slate-500"}`}
       onClick={() => setSelectedFilter(filter)}
     >
       {filter}
-      {isActive && (
-        <div className="w-full my-1 bg-black h-[0.4rem] rounded-t-3xl"></div>
-      )}
-    </Button>
+
+      <div
+        className={`w-full my-1 ${isActive ? "bg-black" : "bg-transparent"} h-[0.4rem] rounded-t-3xl`}
+      ></div>
+    </Box>
   );
 }

@@ -1,0 +1,38 @@
+[
+  {
+    "type": "Mechanical",
+    "ro_number": "sda231390193",
+    "date": "20 jun 2025",
+    "client": "albert fross",
+    "assigned_to": "David Jackson",
+    "current_odd": "10900ml",
+    "status": "decliend",
+    "time": "19:46:05",
+    "claim_number": "1",
+    "amount": "5000"
+  },
+  {
+    "type": "Mechanical",
+    "ro_number": "sda230193",
+    "date": "20 jun 2025",
+    "client": "albert fross",
+    "assigned_to": "David Jackson",
+    "current_odd": "10900ml",
+    "status": "authorized",
+    "time": "19:46:05",
+    "claim_number": "1",
+    "amount": "5000"
+  },
+  {
+    "type": "Mechanical",
+    "ro_number": "sd1390193",
+    "date": "20 jun 2025",
+    "client": "albert fross",
+    "assigned_to": "David Jackson",
+    "current_odd": "10900ml",
+    "status": "pending",
+    "time": "19:46:05",
+    "claim_number": "1",
+    "amount": "5000"
+  }
+]

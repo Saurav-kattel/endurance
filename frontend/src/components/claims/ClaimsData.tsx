@@ -44,7 +44,7 @@ export default function ClaimsData({
     getData();
   }, [selectedFilter]);
   return (
-    <Container>
+    <Container className=" overflow-x-scroll lg:overflow-x-auto">
       <Table className="text-[0.7rem] box-border w-full m-1 p-1">
         <TableThead>
           <TableTr className="text-gray-700 uppercase">
