@@ -1,5 +1,5 @@
 import { Box, Button, FileInput, Text } from "@mantine/core";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsHouseLockFill } from "react-icons/bs";
 import { FaFileUpload } from "react-icons/fa";
 import { FcApproval } from "react-icons/fc";
@@ -50,7 +50,7 @@ function PaymentFileUpload() {
 
 function PaymentHeader() {
   return (
-    <>
+    <Box>
       <Box className=" animate-slideInRight">
         <Text className="text-left text-xl font-semibold">
           Submit for Payment
@@ -67,13 +67,13 @@ function PaymentHeader() {
         </Box>
         <Text className="text-gray-400 text-[0.8rem]">invoice</Text>
       </Box>
-    </>
+    </Box>
   );
 }
 
 function PaymentInvoiceUpload() {
   return (
-    <Box className=" animate-slideInRight">
+    <Box>
       <Text className="py-2 text-[0.9rem]">Select Invoice from Files</Text>
       <Box className="h-[10dvh] w-full flex justify-evenly items-center">
         <FileInput
@@ -116,7 +116,7 @@ function PaymentMethod() {
   const [selectedPaymentMethod, setSelectedPaymentMethod] =
     useState("wired payment");
   return (
-    <Box className=" animate-slideInRight">
+    <Box>
       <Text className="text-[1rem] p-2">Payment Method</Text>
       <Box className="flex justify-start gap-4 items-center p-4 rounded-lg border border-gray-300">
         <MethodIcon selectedMethodPayment={selectedPaymentMethod} />
@@ -136,7 +136,7 @@ function PaymentMethod() {
 
 function PaymentFooter() {
   return (
-    <Box className="flex items-center gap-2 my-2 p-1 animate-slideInRight ">
+    <Box className="flex items-center gap-2 my-2 p-1  ">
       <input type="checkbox" className="accent-black rounded-md" />
 
       <Text className="text-[0.8rem]">All related invoice are provided</Text>
@@ -152,7 +152,7 @@ function PaymentButtons({
   setToggleConfirmationModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <Box className="w-full flex items-center justify-end gap-2 animate-slideInRight ">
+    <Box className="w-full flex items-center justify-end gap-2 ">
       <Button
         onClick={() => setShowPaymentModal((state) => !state)}
         className="text-center px-4 py-1 text-[0.8rem] cursor-pointer border border-slate-300 bg-white rounded-xl"
@@ -177,7 +177,7 @@ export default function PaymentSection({
   setToggleConfirmationModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <>
+    <Box>
       <PaymentHeader />
       <PaymentFileUpload />
       <PaymentInvoiceUpload />
@@ -187,6 +187,6 @@ export default function PaymentSection({
         setShowPaymentModal={setShowPaymentModal}
         setToggleConfirmationModal={setToggleConfirmationModal}
       />
-    </>
+    </Box>
   );
 }

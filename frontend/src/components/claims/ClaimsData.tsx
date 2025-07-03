@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  Image,
   Table,
   TableTbody,
   TableTd,
@@ -11,6 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export interface ApiData {
+  image_url: string;
   status: string;
   client: string;
   type: string;
@@ -78,7 +80,14 @@ export default function ClaimsData({ data }: { data: ApiData[] }) {
                     {claim.client}
                   </TableTd>
                   <TableTd className="text-center capitalize font-semibold">
-                    {claim.assigned_to}
+                    <Box className="flex items-center justify-center gap-2">
+                      <Image
+                        src={claim.image_url}
+                        alt="user profile"
+                        className="w-[30px] h-[30px] rounded-full object-cover"
+                      />
+                      {claim.assigned_to}
+                    </Box>
                   </TableTd>
                   <TableTd className="text-center capitalize font-semibold">
                     {claim.date}

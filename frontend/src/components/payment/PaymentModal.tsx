@@ -34,7 +34,7 @@ export default function PaymentModal({
       <Box
         onClick={() => setShowPaymentModal(!showPaymentModal)}
         ref={ref}
-        className="fixed top-0 flex items-center transition-all right-0 translate-x-full opacity-0 w-[100dvw] box-border h-[100vh]  bg-gray-600/50 z-[100]"
+        className="fixed top-0 flex items-center transition-all right-0 translate-x-full opacity-0 w-[100dvw] box-border h-[100vh]  bg-gray-600/50 ease-in duration-200ms z-[100]"
       >
         <Box
           onClick={(e) => e.stopPropagation()}

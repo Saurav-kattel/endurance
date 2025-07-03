@@ -52,6 +52,7 @@ export default function Navbar() {
       </Box>
 
       <Container
+        onClick={() => setShowSideBar(!showSidebar)}
         ref={ref}
         className={`flex w-[80%] flex-col transition-all translate-x-full h-full fixed right-0 top-0 z-10 bg-gray-300 p-2 gap-6 justify-start items-start lg:h-auto lg:bg-transparent lg:flex-row lg:top-auto lg:left-auto lg:relative lg:w-[80%] lg:translate-x-0 md:h-auto md:bg-transparent md:flex-row md:top-auto md:left-auto md:relative md:w-[80%] md:translate-x-0`}
       >
