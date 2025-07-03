@@ -9,8 +9,8 @@ import {
   TableTr,
   Text,
 } from "@mantine/core";
-import type { ApiData } from "./ClaimsData";
 import type React from "react";
+import type { ApiData } from "../claims/ClaimsData";
 
 export default function ClaimStatus({
   claimData,
@@ -20,9 +20,8 @@ export default function ClaimStatus({
   setShowPaymentModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
-    <Box className="w-full lg:w-[78%] p-4 rounded-xl border border-gray-300 overflow-x-auto">
-      {/* Horizontal scroll wrapper */}
-      <Table className="min-w-[700px] w-full border-collapse py-2 border-spacing-4">
+    <Box className="w-full lg:w-[80%] md:w-[80%] p-4 rounded-xl border border-gray-300 overflow-x-auto">
+      <Table className="min-w-[600px] w-full border-collapse py-2 border-spacing-4">
         <TableThead>
           <TableTr>
             <TableTh className="uppercase text-[0.8rem] text-gray-500 text-left whitespace-nowrap">

@@ -56,7 +56,7 @@ export default function ClaimNav({
   return (
     <Box
       ref={ref}
-      className={`w-[90%]  lg:w-[80%] flex justify-between items-center transition-all p-4 sticky top-0  left-0 bg-white z-50 translate-y-0 opacity-100`}
+      className={`w-[90%]  lg:w-[80%] flex justify-between items-center transition-all p-4 sticky top-0  left-0 bg-white  translate-y-0 opacity-100`}
     >
       <nav className="flex w-full lg:w-[40%] items-center text-[0.8rem] my-3 justify-between capitalize text-gray-500">
         {navitems.map((item) => {

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { ApiData } from "./ClaimsData";
-import { Container } from "@mantine/core";
+import { Button, Container } from "@mantine/core";
 import ClaimHeader from "./ClaimHeader";
 import ClaimStatus from "./ClaimStatus";
 import ClaimNav from "./ClaimNav";
@@ -12,6 +11,7 @@ import ClaimTotal from "./ClaimTotal";
 import ClaimOther from "./ClaimOther";
 import ClaimCustomer from "./ClaimCustomer";
 import PaymentModal from "../payment/PaymentModal";
+import type { ApiData } from "../claims/ClaimsData";
 
 export type JobData = {
   name: string;
@@ -172,6 +172,12 @@ export default function Claim() {
         setShowPaymentModal={setShowPaymentModal}
         showPaymentModal={showPaymentModal}
       />
+      <Button
+        onClick={() => setShowPaymentModal((state) => !state)}
+        className="text-center px-4 block md:hidden lg:hidden py-1 text-[0.8rem] cursor-pointer text-white bg-black rounded-xl"
+      >
+        Submit For Payment
+      </Button>
     </Container>
   );
 }

@@ -65,7 +65,7 @@ export default function ClaimsFilter({
           <CiSearch />
           <input
             placeholder="search"
-            className="bg-transparent outline-none text-[0.8rem] placeholder:text-[0.8rem] w-full lg:w-[20%]"
+            className="bg-transparent outline-none text-[0.8rem] placeholder:text-[0.8rem] w-full "
           />
         </Box>
         <Box className="text-[0.8rem] border-[1px] border-gray-200 rounded-sm p-1 cursor-pointer flex items-center font-semibold justify-start gap-1">

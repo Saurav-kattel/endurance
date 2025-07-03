@@ -8,7 +8,6 @@ import {
   TableThead,
   TableTr,
 } from "@mantine/core";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export interface ApiData {
@@ -23,27 +22,10 @@ export interface ApiData {
   amount: string;
 }
 
-export default function ClaimsData({
-  selectedFilter,
-}: {
-  selectedFilter: string;
-}) {
-  const [data, setData] = useState<ApiData[]>([]);
+export default function ClaimsData({ data }: { data: ApiData[] }) {
   const navigate = useNavigate();
-  useEffect(() => {
-    async function getData() {
-      try {
-        const response = await fetch("../../../exampledata.json");
-        const resData = await response.json();
-        setData(resData);
-      } catch (err: any) {
-        console.error(err);
-      }
-    }
-    getData();
-  }, [selectedFilter]);
   return (
-    <Container className=" overflow-x-scroll lg:overflow-x-auto">
+    <Container className="w-full overflow-x-scroll lg:overflow-x-hidden">
       <Table className="text-[0.7rem] box-border w-full m-1 p-1">
         <TableThead>
           <TableTr className="text-gray-700 uppercase">
