@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Claims from "./components/claims/Claims";
-import Claim from "./components/claims/Claim";
+import Claim from "./components/claim/Claim";
 function App() {
   return (
     <>

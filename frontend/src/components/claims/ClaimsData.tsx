@@ -36,7 +36,6 @@ export default function ClaimsData({
         const response = await fetch("../../../exampledata.json");
         const resData = await response.json();
         setData(resData);
-        console.log(data);
       } catch (err: any) {
         console.error(err);
       }
