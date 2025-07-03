@@ -11,6 +11,7 @@ import ClaimServices from "./ClaimServices";
 import ClaimTotal from "./ClaimTotal";
 import ClaimOther from "./ClaimOther";
 import ClaimCustomer from "./ClaimCustomer";
+import PaymentModal from "../payment/PaymentModal";
 
 export type JobData = {
   name: string;
@@ -53,6 +54,7 @@ export default function Claim() {
   const [serviceData, setServiceData] = useState<JobData[]>([]);
   const [activeSection, setActiveSection] = useState("action");
   const [subletData, setSubletData] = useState<SubletData[]>([]);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   useEffect(() => {
     async function getData() {
       try {
@@ -133,11 +135,20 @@ export default function Claim() {
     }
     getSubletData();
   }, []);
+
   return (
     <Container className="w-full flex scroll-smooth justify-center items-center flex-col">
       {data && <ClaimHeader claimData={data} />}
-      {data && <ClaimStatus claimData={data} />}
-      <ClaimNav activeSection={activeSection} />
+      {data && (
+        <ClaimStatus
+          setShowPaymentModal={setShowPaymentModal}
+          claimData={data}
+        />
+      )}
+      <ClaimNav
+        setShowPaymentModal={setShowPaymentModal}
+        activeSection={activeSection}
+      />
       <ClaimActions ref={refs.action} setActiveSection={setActiveSection} />
       <ClaimSublets
         ref={refs.sublet}
@@ -156,8 +167,11 @@ export default function Claim() {
         subletData={subletData}
       />
       <ClaimOther ref={refs.other} setActiveSection={setActiveSection} />
-
       <ClaimCustomer />
+      <PaymentModal
+        setShowPaymentModal={setShowPaymentModal}
+        showPaymentModal={showPaymentModal}
+      />
     </Container>
   );
 }

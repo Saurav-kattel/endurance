@@ -87,7 +87,7 @@
     ]
   },
   {
-    "name": "Engine Over Heating",
+    "name": "Engine Over Cooling",
     "issue": [
       {
         "name": "cooling system repair",
@@ -174,7 +174,7 @@
     ]
   },
   {
-    "name": "Engine Over Heating",
+    "name": "Engine Over Not Starting",
     "issue": [
       {
         "name": "cooling system repair",

@@ -178,10 +178,7 @@ const JobContainer = ({ data }: { data: JobData }) => {
       <Accordion.Item value={data.name}>
         <Box className="flex w-full justify-between items-center">
           <Accordion.Control>
-            <Text className="text-[0.5rem] lg:text-[0.8rem]">
-              {" "}
-              {data.name}{" "}
-            </Text>
+            <Text className="text-[0.5rem] lg:text-[0.8rem]">{data.name} </Text>
           </Accordion.Control>
 
           <Text className="lg:text-[0.8rem]  text-[0.5rem] border-b-[1px] border-b-slate-300 border-dashed">
@@ -218,7 +215,7 @@ const ClaimServices = forwardRef<HTMLDivElement, PropType>((props, ref) => {
     <Container ref={ref} id="service" className="w-[80%] p-4">
       <Text className="text-[1rem] flex gap-2 items-center font-semibold">
         Services
-        <Text className="text-[0.8rem] text-gray-500">${total}</Text>
+        <span className="text-[0.8rem] text-gray-500">${total}</span>
       </Text>
       <Box className="flex justify-center items-start w-full flex-col gap-4  mt-4">
         {serviceData?.map((data) => (

@@ -1,7 +1,13 @@
 import { Anchor, Box, Button } from "@mantine/core";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-export default function ClaimNav({ activeSection }: { activeSection: string }) {
+export default function ClaimNav({
+  activeSection,
+  setShowPaymentModal,
+}: {
+  activeSection: string;
+  setShowPaymentModal: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [navitems] = useState([
     { name: "Actions", id: "#action" },
     { name: "Sublets", id: "#sublet" },
@@ -12,7 +18,6 @@ export default function ClaimNav({ activeSection }: { activeSection: string }) {
   const [showButton, setShowButton] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const lastScrollY = useRef(0);
-
   useEffect(() => {
     function onScroll() {
       const currentScrollY = window.scrollY;
@@ -51,15 +56,14 @@ export default function ClaimNav({ activeSection }: { activeSection: string }) {
   return (
     <Box
       ref={ref}
-      className={`w-[80%] flex justify-between items-center transition-all p-4 sticky top-0  left-0 bg-white z-50 translate-y-0 opacity-100`}
+      className={`w-[90%]  lg:w-[80%] flex justify-between items-center transition-all p-4 sticky top-0  left-0 bg-white z-50 translate-y-0 opacity-100`}
     >
       <nav className="flex w-full lg:w-[40%] items-center text-[0.8rem] my-3 justify-between capitalize text-gray-500">
         {navitems.map((item) => {
           return (
-            <Box>
+            <Box key={item.id}>
               <Anchor
                 className={`${activeSection === item.id.slice(1) ? "text-slate-700" : null}`}
-                key={item.id}
                 href={item.id}
               >
                 {item.name}
@@ -73,7 +77,10 @@ export default function ClaimNav({ activeSection }: { activeSection: string }) {
       </nav>
 
       {showButton && (
-        <Button className="bg-black cursor-pointer px-4 py-2 text-[0.8rem] rounded-2xl text-white">
+        <Button
+          onClick={() => setShowPaymentModal((state) => !state)}
+          className="bg-black hidden lg:block cursor-pointer px-4 py-2 text-[0.8rem] rounded-2xl text-white"
+        >
           submit for payment
         </Button>
       )}

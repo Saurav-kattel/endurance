@@ -10,11 +10,14 @@ import {
   Text,
 } from "@mantine/core";
 import type { ApiData } from "./ClaimsData";
+import type React from "react";
 
 export default function ClaimStatus({
   claimData,
+  setShowPaymentModal,
 }: {
   claimData: ApiData | undefined;
+  setShowPaymentModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <Box className="w-full lg:w-[78%] p-4 rounded-xl border border-gray-300 overflow-x-auto">
@@ -63,7 +66,10 @@ export default function ClaimStatus({
 
             <TableTd>
               {claimData?.status === "authorized" && (
-                <Button className="px-5 bg-black text-white py-1 rounded-2xl text-[0.75rem]">
+                <Button
+                  onClick={() => setShowPaymentModal((state) => !state)}
+                  className="px-5 bg-black cursor-pointer text-white py-1 rounded-2xl text-[0.75rem]"
+                >
                   Submit for payment
                 </Button>
               )}

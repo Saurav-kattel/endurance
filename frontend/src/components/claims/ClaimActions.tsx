@@ -96,9 +96,9 @@ const ClaimActions = forwardRef<HTMLDivElement, PropType>((props, ref) => {
         >
           <Text className="text-gray-500">
             darg and drop any files related to this claim or
-            <Text className="text-black font-semibold">
+            <span className="text-black font-semibold">
               click here to upload
-            </Text>
+            </span>
           </Text>
         </Box>
       </Box>
